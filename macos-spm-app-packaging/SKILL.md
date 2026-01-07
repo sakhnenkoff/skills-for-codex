@@ -20,6 +20,7 @@ Bootstrap a complete SwiftPM macOS app folder, then build, package, and run it w
    - Package: `Scripts/package_app.sh`.
    - Run: `Scripts/compile_and_run.sh` (preferred) or `Scripts/launch.sh`.
    - Release (optional): `Scripts/sign-and-notarize.sh` and `Scripts/make_appcast.sh`.
+   - Tag + GitHub release (optional): create a git tag, upload the zip/appcast to the GitHub release, and publish.
 
 ## Templates
 - `assets/templates/package_app.sh`: Build binaries, create the .app bundle, copy resources, sign.

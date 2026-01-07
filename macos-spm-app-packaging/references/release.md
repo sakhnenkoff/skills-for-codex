@@ -12,3 +12,20 @@
 - Install Sparkle tools so `generate_appcast` is on PATH.
 - Provide `SPARKLE_PRIVATE_KEY_FILE` (ed25519 key).
 - The appcast script uses your zip artifact to create an updated `appcast.xml`.
+
+## Tag and GitHub release (optional)
+Use a versioned git tag and publish a GitHub release with the notarized zip (and appcast if you host it on GitHub Releases).
+
+Example flow:
+```
+git tag v<version>
+git push origin v<version>
+
+gh release create v<version> CodexBar-<version>.zip appcast.xml \
+  --title "AppName <version>" \
+  --notes-file CHANGELOG.md
+```
+
+Notes:
+- If you serve appcast from GitHub Releases or raw URLs, ensure the release is published and assets are accessible (no 404s).
+- Prefer using a curated release notes file rather than dumping the full changelog.
